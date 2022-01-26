@@ -1,10 +1,10 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 44, 147, 1) 69%,
-    rgba(39, 100, 132, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
+    #020024 0%,
+    #092c93 69%,
+    #276484 100%,
+    #00d4ff 100%
   );
 }
 form {
@@ -20,6 +20,11 @@ form {
   border-radius: 0.4rem;
 }
 
+span {
+  color: red;
+  font-size: 0.8rem;
+}
+
 .input {
   height: 1.5rem;
   border-radius: 0.4rem;
@@ -27,46 +32,70 @@ form {
   padding: 0.4rem;
 }
 
-.fullName {
-  width: 100%;
-  grid-column: 1/-1;
-  grid-row: 1;
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: center;
+.input:focus {
+  outline: #092c93;
+  border: 2px solid #092c93;
 }
 
-.fullName input,
-.email input {
-  width: 92%;
+.fullName {
+  width: 100%;
+  height: auto;
+  grid-column: 1/-1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cpf {
   width: 100%;
-  padding: 0.5rem 0;
+  height: auto;
+  grid-column: 1/2;
+  grid-row: 2;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.cpf input,
-.cep input {
-  width: 85%;
+.cpf input {
+  width: 90%;
 }
 
 .cep {
   width: 100%;
-  padding: 0.5rem 0;
+  height: auto;
+  grid-column: 2/3;
+  grid-row: 2;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.cep div {
+  margin-left: 0.4rem;
+}
+
+.cep input {
+  width: 90%;
+  margin-left: 0.4rem;
 }
 
 .email {
   width: 100%;
+  height: auto;
   grid-column: 1/-1;
   grid-row: 3;
   padding: 0.5rem 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.fullName div,
+.cep div,
+.cpf div,
+.email div {
+  height: 1rem;
 }
 
 .button {
@@ -82,4 +111,10 @@ form {
   height: 2rem;
   border: 2px solid #333;
   border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.button input:hover {
+  border: 2px solid #092c93;
+  color: #092c93;
 }
